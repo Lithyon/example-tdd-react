@@ -1,19 +1,25 @@
 import { Canvas, Meta, Story } from "@storybook/addon-docs";
 import HomeView from "../HomeView";
-import HomeController from "../HomeController";
-import HomeModelViewExtendedBuilder from "../modelView/HomeModelViewExtendedBuilder";
+import MonController from "./ControllerStub";
+import {action} from "@storybook/addon-actions";
 
 
 <Meta
     title="Macif/Commun/Home"
     component={HomeView}
+    argTypes={{
+        label: {
+            type: "string"
+        }
+    }}
 />
 
 export const Template = (args) => <HomeView {...args} />;
 
+
 <Canvas>
     <Story name="par défaut"
-        args={{controller: new HomeController({homeModelViewExtendedBuilder: new HomeModelViewExtendedBuilder()})}}>
+        args={{controller: new MonController(action("onSubmit"), action("onChange"))}}>
         {Template.bind({})}
     </Story>
 </Canvas>

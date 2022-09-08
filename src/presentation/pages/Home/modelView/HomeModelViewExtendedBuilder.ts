@@ -16,4 +16,8 @@ export default class HomeModelViewExtendedBuilder {
     build(): HomeModelViewExtended {
         return CloneableExtension(this.state, prototype);
     }
+
+    name(name: string) {
+        return new HomeModelViewExtendedBuilder({...this.state, name})
+    }
 }
