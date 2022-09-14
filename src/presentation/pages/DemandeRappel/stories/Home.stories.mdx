@@ -1,0 +1,40 @@
+import { Canvas, Meta, Story } from "@storybook/addon-docs";
+import DemandeRappelView from "../DemandeRappelView";
+import DemandeRappelControllerStub from "../stub/DemandeRappelControllerStub";
+import {action} from "@storybook/addon-actions";
+import { userEvent, within } from "@storybook/testing-library";
+
+
+<Meta
+    title="Macif/Page/DemandeRappel"
+    component={DemandeRappelView}
+    argTypes={{
+        label: {
+            type: "string"
+        }
+    }}
+/>
+
+export const Template = (args) => <DemandeRappelView {...args} />;
+
+
+<Canvas>
+    <Story name="par défaut"
+        args={{controller: new DemandeRappelControllerStub(action("onSubmit"), action("onChange"))}}>
+        {Template.bind({})}
+    </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="error"
+         args={{controller: new DemandeRappelControllerStub(action("onSubmit"), action("onChange"), "ma superbe erreur")}}
+         play={
+           async ({args, canvasElement}) => {
+             const canvas = within(canvasElement);
+             await userEvent.click(canvas.getByText(/Envoyer ma demande/i));
+             //await expect(args.onSubmit).toHaveBeenCalled();
+           }
+         }>
+    {Template.bind({})}
+  </Story>
+</Canvas>

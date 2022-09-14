@@ -1,0 +1,18 @@
+import { Canvas, Meta, Story } from "@storybook/addon-docs";
+import { action } from "@storybook/addon-actions";
+import Modal from "../Modal.tsx";
+
+<Meta
+  title="Macif/Commun/Modal"
+  component={Modal}
+/>
+
+export const Template = (args) => <Modal {...args} />;
+
+
+<Canvas>
+  <Story name="par défaut"
+         args={{show: true}}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
