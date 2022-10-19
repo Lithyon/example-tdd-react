@@ -24,7 +24,7 @@ type OmittedProps =
 export interface InputProperties extends Omit<InputHTMLAttributes<HTMLInputElement>, OmittedProps> {
     readonly id: string;
     readonly onChange?: FormEventHandler<HTMLInputElement>
-    readonly "data-testid": string;
+    readonly "data-testid"?: string;
 }
 
 export default function Input({id, onChange, children, ...props}: InputProperties) {

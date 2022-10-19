@@ -1,16 +1,16 @@
 interface PageDetail {
-    readonly link:string;
-    readonly displayName:string;
+    readonly link: string;
+    readonly displayName: string;
 }
 
 interface PageDetails {
-    readonly home:PageDetail;
+    readonly demandeRappel: PageDetail;
 }
 
-const pageDetails:PageDetails = {
-    home: {
+const pageDetails: PageDetails = {
+    demandeRappel: {
         link: '/',
-        displayName: 'home'
+        displayName: 'DemandeRappel'
     }
 }
 
