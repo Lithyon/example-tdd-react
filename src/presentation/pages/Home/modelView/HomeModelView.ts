@@ -1,4 +1,4 @@
-import IsCloneable from "@maciffr/react-mvc/lib/contracts/IsCloneable";
+import IsCloneable from "../../../../react-mvc/contracts/IsCloneable";
 
 export default interface HomeModelView {
     readonly name:string;

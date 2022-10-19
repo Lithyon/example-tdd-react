@@ -1,4 +1,4 @@
-import CloneableExtension from "@maciffr/react-mvc/core/CloneableExtension";
+import CloneableExtension from "../../../../react-mvc/core/CloneableExtension";
 import HomeModelView, {HomeModelViewExtended} from "./HomeModelView";
 import {prototype} from "./HomeViewModelPrototype";
 

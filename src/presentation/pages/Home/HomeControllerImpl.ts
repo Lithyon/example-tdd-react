@@ -1,4 +1,4 @@
-import ControllerBase from "@maciffr/react-mvc/core/ControllerBase";
+import ControllerBase from "../../../react-mvc/core/ControllerBase";
 import {HomeModelViewExtended} from "./modelView/HomeModelView";
 import HomeModelViewExtendedBuilder from "./modelView/HomeModelViewExtendedBuilder";
 import HomeService from "../../../domain/Home/HomeService";
